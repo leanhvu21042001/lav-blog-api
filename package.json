@@ -2,13 +2,15 @@
   "name": "api",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "www.js",
   "scripts": {
     "clean": "rm -rf build && mkdir build",
     "build-babel": "babel ./src -d ./build/src",
     "build": "npm run clean && npm run build-babel",
     "production": "npm run build && node ./build/src/www.js",
-    "dev": "nodemon --exec ./node_modules/.bin/babel-node ./src/www.js"
+    "dev": "nodemon --exec ./node_modules/.bin/babel-node ./src/www.js",
+    "lint": "eslint \"{src,test}/**/*{.js,.ts}\"",
+    "lint:fix": "eslint \"{src,test}/**/*{.js,.ts}\" --fix"
   },
   "author": "",
   "license": "ISC",
@@ -28,6 +30,11 @@
     "@babel/core": "^7.21.0",
     "@babel/node": "^7.20.7",
     "@babel/preset-env": "^7.20.2",
+    "eslint": "^8.0.1",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
     "nodemon": "^2.0.21"
   }
 }
