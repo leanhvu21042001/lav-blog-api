@@ -2,26 +2,48 @@
 
 ## Dependencies
 
-- express
-- jsonwebtoken
-- knex
-- pg
-- cors
+```json
+{
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "debug": "^4.3.4",
+    "express": "^4.18.2",
+    "http-errors": "^2.0.0",
+    "jsonwebtoken": "^9.0.0",
+    "knex": "^2.4.2",
+    "morgan": "^1.10.0",
+    "pg": "^8.9.0"
+  }
+}
+```
 
 ## Dev Dependencies
 
-- @babel/cli
-- @babel/core
-- @babel/node
-- @babel/preset-env
-- nodemon
+```json
+
+ "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.0",
+    "@babel/node": "^7.20.7",
+    "@babel/preset-env": "^7.20.2",
+    "nodemon": "^2.0.21"
+  }
+
+```
 
 ## Scripts
 
 ```json
-"build": "babel index.js -d dist",
-"start": "npm run build && node dist/index.js",
-"dev": "nodemon --exec babel-node server.js"
+{
+  "scripts": {
+    "clean": "rm -rf build && mkdir build",
+    "build-babel": "babel ./src -d ./build/src",
+    "build": "npm run clean && npm run build-babel",
+    "production": "npm run build && node ./build/src/www.js",
+    "dev": "nodemon --exec ./node_modules/.bin/babel-node ./src/www.js"
+  }
+}
 ```
 
 - Build: `yarn build`
