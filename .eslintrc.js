@@ -28,5 +28,6 @@ module.exports = {
     "max-classes-per-file": ["error", 2],
     "no-restricted-exports": "off",
     "import/no-unused-modules": "error",
+    "space-before-function-paren": 0,
   },
 };
