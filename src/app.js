@@ -44,4 +44,4 @@ app.use(notFound);
 // error handler
 app.use(internalServerError);
 
-export default app;
+module.exports = app;

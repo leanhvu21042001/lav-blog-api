@@ -41,7 +41,9 @@
     "build-babel": "babel ./src -d ./build/src",
     "build": "npm run clean && npm run build-babel",
     "production": "npm run build && node ./build/src/www.js",
-    "dev": "nodemon --exec ./node_modules/.bin/babel-node ./src/www.js"
+    "dev": "nodemon --exec ./node_modules/.bin/babel-node ./src/www.js",
+    "lint": "eslint \"{src,test}/**/*{.js,.ts}\"",
+    "lint:fix": "eslint \"{src,test}/**/*{.js,.ts}\" --fix"
   }
 }
 ```
