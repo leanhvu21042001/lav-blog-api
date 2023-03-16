@@ -47,7 +47,7 @@
 ```
 
 - Build: `yarn build`
-- Start build: `yarn start`
+- Start build: `yarn production`
 - Start Development: `yarn dev`
 
 ## Whose
