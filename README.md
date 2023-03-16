@@ -38,10 +38,10 @@
 {
   "scripts": {
     "clean": "rm -rf build && mkdir build",
-    "build-babel": "babel ./src -d ./build/src",
+    "build-babel": "babel ./src -d ./build/src && cp -r ./bin ./build",
     "build": "npm run clean && npm run build-babel",
-    "production": "npm run build && node ./build/src/www.js",
-    "dev": "nodemon --exec ./node_modules/.bin/babel-node ./src/www.js",
+    "production": "npm run build && node ./build/bin/www",
+    "dev": "nodemon --exec ./node_modules/.bin/babel-node ./bin/www",
     "lint": "eslint \"{src,test}/**/*{.js,.ts}\"",
     "lint:fix": "eslint \"{src,test}/**/*{.js,.ts}\" --fix"
   }
