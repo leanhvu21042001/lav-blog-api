@@ -1,62 +1,116 @@
 # LAV Blog - API
 
-## Dependencies
+## Clone project
 
-```json
-{
-  "dependencies": {
-    "cookie-parser": "^1.4.6",
-    "cors": "^2.8.5",
-    "debug": "^4.3.4",
-    "express": "^4.18.2",
-    "http-errors": "^2.0.0",
-    "jsonwebtoken": "^9.0.0",
-    "knex": "^2.4.2",
-    "morgan": "^1.10.0",
-    "pg": "^8.9.0"
-  }
-}
+```sh
+git clone https://github.com/leanhvu21042001/lav-blog-api.git
 ```
 
-## Dev Dependencies
+## Install dependencies and devDependencies
 
-```json
-
- "devDependencies": {
-    "@babel/cli": "^7.21.0",
-    "@babel/core": "^7.21.0",
-    "@babel/node": "^7.20.7",
-    "@babel/preset-env": "^7.20.2",
-    "nodemon": "^2.0.21"
-  }
-
+```sh
+yarn
 ```
 
-## Scripts
+## Create Migrate
 
-```json
-{
-  "scripts": {
-    "clean": "rm -rf build && mkdir build",
-    "build-babel": "babel ./src -d ./build/src && cp -r ./bin ./build",
-    "build": "npm run clean && npm run build-babel",
-    "production": "npm run build && node ./build/bin/www",
-    "dev": "nodemon --exec ./node_modules/.bin/babel-node ./bin/www",
-    "lint": "eslint \"{src,test}/**/*{.js,.ts}\"",
-    "lint:fix": "eslint \"{src,test}/**/*{.js,.ts}\" --fix"
-  }
-}
+```sh
+yarn migrate:make <name_migrate>
 ```
 
-- Build: `yarn build`
-- Start build: `yarn production`
-- Start Development: `yarn dev`
+## Create Seed
 
-### [Database](https://app.supabase.com/projects)
+```sh
+yarn seed:make <name_seed>
+```
 
-- Create migration: `knex migrate:make --migrations-directory src/db/knex/migrations`
+## Run Migrations
 
-## Whose
+```sh
+yarn migrate:production
+yarn migrate:development
+yarn migrate:testing
+```
+
+## Run Un-Migrations
+
+```sh
+yarn unmigrate:production
+yarn unmigrate:development
+yarn unmigrate:testing
+```
+
+## Run Seeds
+
+```sh
+yarn seed:production
+yarn seed:development
+yarn seed:testing
+```
+
+## Build and run production in local
+
+- Using [babeljs](https://babeljs.io/)
+
+```sh
+yarn production
+```
+
+## Run Development
+
+```sh
+yarn dev
+```
+
+## Database
+
+- [Supabase](https://supabase.com/): **PostgreSQL**
+
+## Deploy
+
+- [Vercel](https://vercel.com/)
+
+## Rules commit
+
+- Prevent commit at branch dev and branch main
+- Prevent push at branch main
+- [Conventional commits](https://github.com/conventional-changelog/commitlint/tree/master/%40commitlint/config-conventional)
+
+## JavaScript Style
+
+- [Eslint](https://eslint.org/)
+
+## Project structure
+
+```sh
+├── bin
+│   └── www
+├── src
+│   ├── app.js
+│   ├── config
+│   ├── controllers
+│   ├── dao
+│   ├── db
+│   │   ├── knex
+│   │   │   ├── index.js
+│   │   │   ├── migrations
+│   │   │   └── seeds
+│   │   └── knexfile.js
+│   ├── helpers
+│   ├── middleware
+│   ├── modals
+│   ├── public
+│   ├── routes
+│   ├── services
+│   ├── test
+│   ├── utils
+│   └── validations
+├── .env
+└── vercel.json
+├── package.json
+```
+
+## Author
 
 ```
 --Lê Anh Vũ--
