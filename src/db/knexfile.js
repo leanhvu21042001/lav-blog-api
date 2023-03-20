@@ -1,7 +1,8 @@
-import dotenv from "dotenv";
-dotenv.config();
-
-// Update with your config settings.
+import {
+  DB_URL_DEVELOPMENT,
+  DB_URL_TESTING,
+  DB_URL_PRODUCTION,
+} from "../config/constant";
 
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
@@ -11,7 +12,7 @@ module.exports = {
     debug: true,
     client: "pg",
     version: "15.0",
-    connection: process.env.DB_URL_DEVELOPMENT,
+    connection: DB_URL_DEVELOPMENT,
     pool: {
       min: 0,
       max: 15,
@@ -25,7 +26,7 @@ module.exports = {
   testing: {
     client: "pg",
     version: "15.0",
-    connection: process.env.DB_URL_TESTING,
+    connection: DB_URL_TESTING,
     pool: {
       min: 0,
       max: 15,
@@ -39,7 +40,7 @@ module.exports = {
   production: {
     client: "pg",
     version: "15.0",
-    connection: process.env.DB_URL_PRODUCTION,
+    connection: DB_URL_PRODUCTION,
     pool: {
       min: 0,
       max: 15,
