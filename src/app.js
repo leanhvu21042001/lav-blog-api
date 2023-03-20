@@ -1,15 +1,23 @@
 import express from "express";
 import path from "path";
-import logger from "morgan";
-import cookieParser from "cookie-parser";
 import helmet from "helmet";
+import morgan from "morgan";
+import cookieParser from "cookie-parser";
+import methodOverride from "method-override";
 
 import rootRouter from "./routes";
-import { notFound, internalServerError } from "./middleware/error_handler";
 import cors from "./middleware/cors";
 import limiter from "./middleware/limiter";
+import { morganLogFormat } from "./config/constant";
+import errorConverter from "./error/error-converter";
+import errorHandler from "./error/error-handler";
+import APIError from "./error/APIError";
 
 const app = express();
+
+// lets you use HTTP verbs such as PUT or DELETE
+// in places where the client doesn't support it
+app.use(methodOverride());
 
 // Use package
 app.use(helmet());
@@ -23,7 +31,7 @@ if (process.env.NODE_ENV === "production") {
 app.use(cors);
 
 // Logger
-app.use(logger("dev"));
+app.use(morgan(morganLogFormat));
 
 // parse application/json
 app.use(express.json());
@@ -40,8 +48,14 @@ app.use("/public", express.static(path.join(__dirname, "./public")));
 app.use(rootRouter);
 
 // catch 404 and forward to error handler
-app.use(notFound);
-// error handler
-app.use(internalServerError);
+app.use((_req, _res, next) => {
+  next(APIError.NotFound());
+});
+
+// if error is not an instanceOf APIError, convert it.
+app.use(errorConverter);
+
+// error handler, send stacktrace only during development
+app.use(errorHandler);
 
 module.exports = app;
