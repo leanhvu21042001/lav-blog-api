@@ -52,6 +52,10 @@
 - Start build: `yarn production`
 - Start Development: `yarn dev`
 
+### Database
+
+- Create migration: `knex migrate:make --migrations-directory src/db/knex/migrations`
+
 ## Whose
 
 ```
