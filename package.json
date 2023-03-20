@@ -11,6 +11,7 @@
     "clean": "rm -rf build && mkdir build",
     "build-babel": "babel ./src -d ./build/src && cp -r ./bin ./build",
     "build": "yarn clean && yarn build-babel",
+
     "production": "yarn build && NODE_ENV=production node ./build/bin/www",
     "dev": "nodemon --exec ./node_modules/.bin/babel-node ./bin/www",
     "knex": "./node_modules/.bin/babel-node -r dotenv/config node_modules/.bin/knex --knexfile ./src/db/knexfile.js",
