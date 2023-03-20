@@ -1,9 +1,10 @@
 import express from "express";
-import users from "./users";
+import post from "./post";
 
 const router = express.Router();
 
 router.get("/", (_req, res) => res.json({ message: "App is running" }));
-router.use("/users", users);
+router.get("/test", (_req, res) => res.json({ message: "Test" }));
+router.use("/post", post);
 
 export default router;
