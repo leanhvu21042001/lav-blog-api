@@ -11,6 +11,10 @@ class PostService {
   getAll() {
     return PostDao.getAll();
   }
+
+  getOne(id) {
+    return PostDao.getOne(id);
+  }
 }
 
 export default new PostService();
