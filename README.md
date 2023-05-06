@@ -8,6 +8,9 @@ git clone https://github.com/leanhvu21042001/lav-blog-api.git
 
 ## Install dependencies and devDependencies
 
+- Download [NVM](https://github.com/nvm-sh/nvm)
+- Run file `./nvm-setup.sh`
+
 ```sh
 yarn
 ```
@@ -112,6 +115,6 @@ yarn dev
 
 ## Author
 
-```
+```author
 --Lê Anh Vũ--
 ```
