@@ -5,12 +5,8 @@ import postDto from "../dto/post";
 
 const router = express.Router();
 
-/* GET users listing. */
-router.get("/get-all", PostController.getAll);
-router.post(
-  "/create",
-  validateDto(postDto.createPostDto),
-  PostController.createPost
-);
+router.get("/", PostController.getAll);
+router.get("/:id", PostController.getOne);
+router.post("/", validateDto(postDto.createPostDto), PostController.createPost);
 
 export default router;

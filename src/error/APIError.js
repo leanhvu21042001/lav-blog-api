@@ -32,25 +32,25 @@ class APIError extends ExtendableError {
 
   static NotFound(error) {
     return new APIError({
-      ...error,
       message: "Not found",
       status: httpStatus.NOT_FOUND,
+      ...error,
     });
   }
 
   static BadRequest(error) {
     return new APIError({
-      ...error,
       message: "Bad request",
       status: httpStatus.BAD_REQUEST,
+      ...error,
     });
   }
 
   static ValidationError(error) {
     return new APIError({
-      ...error,
       message: "Validation Error",
       status: httpStatus.BAD_REQUEST,
+      ...error,
     });
   }
 }

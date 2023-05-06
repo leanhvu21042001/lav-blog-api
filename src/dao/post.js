@@ -18,6 +18,11 @@ class PostDAO {
     const posts = await db("posts").select("*");
     return posts;
   }
+
+  async getOne(id) {
+    const post = await db("posts").select("*").where("id", id).first();
+    return post;
+  }
 }
 
 export default new PostDAO();

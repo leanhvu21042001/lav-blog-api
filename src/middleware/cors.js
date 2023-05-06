@@ -1,7 +1,7 @@
 import cors from "cors";
 
 // whitelist
-const allowedOrigins = ["http://localhost:2001", "http://localhost:1412"];
+const allowedOrigins = ["http://localhost:3000", "http://localhost:1412"];
 
 const corsOptions = {
   origin: (origin, callback) => {
