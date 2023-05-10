@@ -1,5 +1,5 @@
-import PostDao from "../dao/post";
-import { toKebabCase } from "../utils";
+import { toKebabCase } from "@/utils";
+import PostDao from "./post.dao";
 
 class PostService {
   createPost(postDto) {

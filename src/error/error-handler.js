@@ -1,6 +1,6 @@
 import httpStatus from "http-status";
 
-import { env } from "../config/constant";
+import { env } from "@/config/constant";
 
 export default (err, _req, res, _next) => {
   const response = {

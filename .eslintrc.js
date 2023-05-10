@@ -30,4 +30,9 @@ module.exports = {
     "import/no-unused-modules": "error",
     "space-before-function-paren": 0,
   },
+  settings: {
+    "import/resolver": {
+      "babel-module": { allowExistingDirectories: true },
+    },
+  },
 };

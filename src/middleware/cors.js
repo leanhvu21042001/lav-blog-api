@@ -1,7 +1,11 @@
 import cors from "cors";
 
 // whitelist
-const allowedOrigins = ["http://localhost:3000", "http://localhost:1412", "https://lav-blog-client.vercel.app"];
+const allowedOrigins = [
+  "http://localhost:3000",
+  "http://localhost:1412",
+  "https://lav-blog-client.vercel.app",
+];
 
 const corsOptions = {
   origin: (origin, callback) => {

@@ -1,8 +1,8 @@
-import db from "../db/knex";
+import database from "@/database/knex";
 
 class PostDAO {
   async createPost(title, content, tags, slug) {
-    const [id] = await db("posts")
+    const [id] = await database("posts")
       .insert({
         title,
         content,
@@ -15,12 +15,12 @@ class PostDAO {
   }
 
   async getAll() {
-    const posts = await db("posts").select("*");
+    const posts = await database("posts").select("*");
     return posts;
   }
 
   async getOne(id) {
-    const post = await db("posts").select("*").where("id", id).first();
+    const post = await database("posts").select("*").where("id", id).first();
     return post;
   }
 }

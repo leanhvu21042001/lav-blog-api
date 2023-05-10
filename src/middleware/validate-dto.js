@@ -1,4 +1,4 @@
-import APIError from "../error/APIError";
+import APIError from "@/error/APIError";
 
 const validateDto = (schema) => {
   return async (req, _res, next) => {
