@@ -10,6 +10,7 @@ module.exports = {
     sourceType: "module",
   },
   rules: {
+    "import/no-unresolved": [2, { commonjs: true, amd: true }],
     "comma-dangle": 0,
     semi: ["error", "always"],
     quotes: ["error", "double"],
