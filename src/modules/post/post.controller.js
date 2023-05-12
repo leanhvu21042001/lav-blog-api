@@ -1,8 +1,8 @@
 import httpStatus from "http-status";
 
-import { isEmpty } from "../utils";
-import APIError from "../error/APIError";
-import PostService from "../services/post";
+import PostService from "./post.service";
+import { isEmpty } from "@/utils";
+import APIError from "@/error/APIError";
 
 class PostController {
   async createPost(req, res, next) {
@@ -12,7 +12,7 @@ class PostController {
         data: id,
       });
     } catch (error) {
-      next(new APIError(error));
+      next(error);
     }
   }
 
@@ -23,7 +23,7 @@ class PostController {
         data: posts,
       });
     } catch (error) {
-      next(new APIError(error));
+      next(error);
     }
   }
 
@@ -43,7 +43,7 @@ class PostController {
         data: post,
       });
     } catch (error) {
-      next(new APIError(error));
+      next(error);
     }
   }
 }
