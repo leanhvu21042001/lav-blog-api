@@ -53,6 +53,13 @@ yarn seed:testing
 
 ## Build and run production in local
 
+- use docker: [docker-compose](./docs/docker-compose.md)
+- Run:
+
+```docker
+docker-compose up --build
+```
+
 - Using [babeljs](https://babeljs.io/)
 
 ```sh

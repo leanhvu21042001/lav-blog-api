@@ -1,8 +1,8 @@
 import {
   DB_URL_DEVELOPMENT,
-  DB_URL_TESTING,
   DB_URL_PRODUCTION,
-} from "@/config/constant";
+  DB_URL_TESTING,
+} from "../config/constant";
 
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
