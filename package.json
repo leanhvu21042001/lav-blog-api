@@ -15,7 +15,7 @@
     "build": "yarn clean && yarn build-babel",
     "production": "yarn build && NODE_ENV=production node ./build/bin/www",
     "dev": "nodemon --exec ./node_modules/.bin/babel-node ./bin/www",
-    "knex": "./node_modules/.bin/babel-node -r dotenv/config node_modules/.bin/knex --knexfile ./src/db/knexfile.js",
+    "knex": "./node_modules/.bin/babel-node -r dotenv/config node_modules/.bin/knex --knexfile ./src/database/knexfile.js",
     "unmigrate:development": "NODE_ENV=development yarn knex migrate:rollback",
     "unmigrate:production": "NODE_ENV=production yarn knex migrate:rollback",
     "unmigrate:testing": "NODE_ENV=testing yarn knex migrate:rollback",
