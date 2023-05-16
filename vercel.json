@@ -2,5 +2,5 @@
   "version": 2,
   "name": "lav-blog-api",
   "builds": [{ "src": "./src/app.js", "use": "@vercel/node" }],
-  "routes": [{ "src": "/(.*)", "dest": "build/src/app.js" }]
+  "routes": [{ "src": "/(.*)", "dest": "/build/src/app.js" }]
 }
