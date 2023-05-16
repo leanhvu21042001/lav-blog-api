@@ -1,3 +1,4 @@
+
 name: CI/CD
 
 on:
@@ -13,8 +14,8 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up Vercel environment
-      run: npx vercel secrets add my-token ${{ secrets.VERCEL_TOKEN }}
+    - name: Login to Vercel
+      run: vercel login --token ${{ secrets.VERCEL_TOKEN }}
 
     - name: Install dependencies
       run: yarn install
@@ -23,4 +24,4 @@ jobs:
       run: yarn build
 
     - name: Deploy to Vercel
-      run: npx vercel --prod --token ${{ secrets.VERCEL_TOKEN }}
+      run: npx vercel --prod
