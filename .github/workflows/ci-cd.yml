@@ -13,6 +13,9 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
+    - name: Login to Vercel
+      run: vercel login --token ${{ secrets.VERCEL_TOKEN }}
+
     - name: Install dependencies
       run: yarn install
 
