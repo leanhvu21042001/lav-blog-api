@@ -20,4 +20,4 @@ jobs:
       run: yarn build
 
     - name: Deploy to Vercel
-      run: npx vercel --prod
+      run: npx vercel --prod --token r9WBvr3jnI5bW94oqDLHD3Vb
