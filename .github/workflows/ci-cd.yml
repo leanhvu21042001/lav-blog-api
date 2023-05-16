@@ -13,8 +13,10 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Login to Vercel
-      run: vercel login --token ${{ secrets.VERCEL_TOKEN }}
+    - name: Set up Vercel environment
+      env:
+        VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      run: echo "//registry.npmjs.org/:_authToken=\${VERCEL_TOKEN}" >> ~/.npmrc
 
     - name: Install dependencies
       run: yarn install
