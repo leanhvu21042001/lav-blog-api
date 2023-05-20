@@ -4,7 +4,7 @@ import cors from "cors";
 const allowedOrigins = [
   "http://localhost:3000",
   "http://localhost:1412",
-  "https://lav-blog-client.vercel.app",
+  "https://lav-dev.vercel.app",
 ];
 
 const corsOptions = {
