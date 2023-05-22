@@ -15,6 +15,10 @@ class PostService {
   getOne(id) {
     return PostDao.getOne(id);
   }
+
+  getOneBySlug(slug) {
+    return PostDao.getOneBySlug(slug);
+  }
 }
 
 export default new PostService();

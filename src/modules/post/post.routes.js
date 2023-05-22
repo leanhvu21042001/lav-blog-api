@@ -8,6 +8,7 @@ const router = express.Router();
 router
   .get("/", PostController.getAll)
   .get("/:id", PostController.getOne)
+  .get("/:slug/slug", PostController.getOneBySlug)
   .post("/", validateDto(postDto.createPostDto), PostController.createPost);
 
 export default router;

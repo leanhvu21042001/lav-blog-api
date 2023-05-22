@@ -23,6 +23,14 @@ class PostDAO {
     const post = await database("posts").select("*").where("id", id).first();
     return post;
   }
+
+  async getOneBySlug(slug) {
+    const post = await database("posts")
+      .select("*")
+      .where("slug", slug)
+      .first();
+    return post;
+  }
 }
 
 export default new PostDAO();
