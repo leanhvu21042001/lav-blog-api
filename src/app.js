@@ -1,17 +1,17 @@
-import express from "express";
-import path from "path";
-import helmet from "helmet";
-import morgan from "morgan";
 import cookieParser from "cookie-parser";
+import express from "express";
+import helmet from "helmet";
 import methodOverride from "method-override";
+import morgan from "morgan";
+import path from "path";
 
-import rootRouter from "./routes";
-import cors from "./middleware/cors";
-import limiter from "./middleware/limiter";
 import { morganLogFormat } from "./config/constant";
+import APIError from "./error/APIError";
 import errorConverter from "./error/error-converter";
 import errorHandler from "./error/error-handler";
-import APIError from "./error/APIError";
+import cors from "./middleware/cors";
+import limiter from "./middleware/limiter";
+import rootRouter from "./routes";
 
 const app = express();
 
@@ -37,7 +37,7 @@ app.use(morgan(morganLogFormat));
 app.use(express.json());
 
 // parse application/x-www-form-urlencoded
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 
 // set up for cookies middleware
 app.use(cookieParser());
