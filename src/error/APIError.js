@@ -30,6 +30,11 @@ class APIError extends ExtendableError {
     });
   }
 
+  /**
+   *
+   * @param {ExtendableError} error
+   * @returns APIError
+   */
   static NotFound(error) {
     return new APIError({
       message: "Not found",
@@ -38,6 +43,11 @@ class APIError extends ExtendableError {
     });
   }
 
+  /**
+   *
+   * @param {ExtendableError} error
+   * @returns APIError
+   */
   static BadRequest(error) {
     return new APIError({
       message: "Bad request",
@@ -46,6 +56,11 @@ class APIError extends ExtendableError {
     });
   }
 
+  /**
+   *
+   * @param {ExtendableError} error
+   * @returns APIError
+   */
   static ValidationError(error) {
     return new APIError({
       message: "Validation Error",
